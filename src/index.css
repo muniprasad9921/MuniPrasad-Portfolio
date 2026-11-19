@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #060607;
+  --color-charcoal: #0d0d10;
+  --color-surface: #131317;
+  --color-surface-elevated: #19191f;
+  --color-hairline: rgba(255, 255, 255, 0.08);
+  --color-gold: #d4af37;
+  --color-gold-light: #ebd07e;
+  --color-gold-muted: #9e8232;
+  --color-ivory: #f4f2ec;
+  --color-muted: #9c9a93;
+}
+
+@layer base {
+  html {
+    background-color: #060607;
+    color: #f4f2ec;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #060607;
+    color: #f4f2ec;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+/* Custom subtle architectural scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060607;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24242b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Editorial marquee divider animation */
+@keyframes editorial-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-editorial-marquee {
+  display: flex;
+  width: max-content;
+  animation: editorial-marquee 38s linear infinite;
+}
+
+.animate-editorial-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-editorial-marquee {
+    animation: none;
+  }
+}
+
+/* Subtle gold hairline sheen for featured surfaces */
+.gold-hairline {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.surface-glass {
+  background: rgba(18, 18, 22, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}

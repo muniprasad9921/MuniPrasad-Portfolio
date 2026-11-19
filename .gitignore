@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds & caches
+dist/
+build/
+coverage/
+.vite/
+.vercel/
+*.tsbuildinfo
+
+# Environment & sensitive credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
